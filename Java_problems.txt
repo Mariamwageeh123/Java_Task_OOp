@@ -1,0 +1,112 @@
+example 2
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+class Main {
+    
+    public static void main(String[] args) {
+        String word="abcabcbb";
+        ArrayList<Character> arrlist = new ArrayList<Character>();
+        for (int i =0; i< word.length() ;i++)
+        {
+            if(i==0)
+            {
+                arrlist.add(word.charAt(i));
+            }
+            else{
+                
+                    if(!(arrlist.contains(word.charAt(i))) ){
+                        arrlist.add(word.charAt(i));
+                    }
+                    else{
+                        break;
+                    }
+                }
+            
+        }
+        System.out.println(arrlist);
+    }
+    
+}
+
+after modify example 2
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+class Main {
+    
+    public static void main(String[] args) {
+        String word="abcabcbb";
+        ArrayList<Character> arrlist = new ArrayList<Character>();
+        ArrayList<Character> max = new ArrayList<Character>();
+        for (int i =0; i< word.length() ;i++)
+        {
+            // if(i==0)
+            // {
+            //     arrlist.add(word.charAt(i));
+            // }
+            // else{
+               
+                    if(!(arrlist.contains(word.charAt(i)))  ){
+                        arrlist.add(word.charAt(i));
+                        // if ((arrlist.size()>=2) ){}
+                    }
+                    else if(arrlist.contains(word.charAt(i))){
+                        if(arrlist.size() > max.size()  ){
+                            max.clear();
+                            max.addAll(arrlist);
+                        
+                        }
+                       
+                       arrlist.clear();
+                       arrlist.add(word.charAt(i));
+                    //   if(){
+                           
+                    //       max=arrlist;
+                    //   }
+                    }
+                // }
+            //  System.out.println(max);
+        }
+        System.out.println(max);
+    }
+    
+}
+
+example 3
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.io.*;
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+      String str= "race a car";
+      str = str.replaceAll("[^a-zA-Z]+", "");
+      str=str.toLowerCase();
+      boolean k =true ;
+      for(int i=0;i<str.length();i++)
+      {
+        char c=  str.charAt(i);
+        char c2= str.charAt(str.length()-i-1);
+        if(c != c2){
+        k=false;
+        }
+          
+      }
+      if (k==true){
+         System.out.println("palindrom");      
+          
+      }
+      else{
+          System.out.println("not palindrom");  
+      }
+        
+    
+     
+     
+    }
+}
